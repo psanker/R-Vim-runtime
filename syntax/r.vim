@@ -246,6 +246,10 @@ syn match rOpError  '&&&'
 syn match rOpError  '|||'
 syn match rOpError  '<<'
 syn match rOpError  '>>'
+"
+" Namespace support
+syn match rNamespaceOp ':\{2,3}' contained
+syn match rNamespace '[a-zA-Z0-9\\._]\+:\{2,3}' contains=rNamespaceOp
 
 syn match rAssign "<\{1,2}-"
 syn match rAssign "->\{1,2}"
@@ -351,9 +355,11 @@ hi def link rLstElmt     Normal
 hi def link rNameWSpace  Normal
 hi def link rNumber      Number
 hi def link rOperator    Operator
+hi def link rNamespaceOp Operator
+hi def link rNamespace   Directory
 hi def link rOpError     Error
 hi def link rParenError  Error
-hi def link rPreProc     PreProc
+hi def link rPreProc     Directory
 hi def link rRepeat      Repeat
 hi def link rSpecial     SpecialChar
 hi def link rStatement   Statement
